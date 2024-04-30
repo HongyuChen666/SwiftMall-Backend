@@ -110,12 +110,6 @@ public class UserInfoServiceImpl implements UserInfoService {
     // Retrieve information about the currently logged-in user
     @Override
     public UserInfoVo getCurrentUserInfo(String token) {
-        // Retrive user info from Redis
-//        String userJson = redisTemplate.opsForValue().get("user:gomall:" + token);
-//        if (!StringUtils.hasText(userJson)) {
-//            throw new GuiguException(ResultCodeEnum.LOGIN_AUTH);
-//        }
-//        UserInfo userInfo =
 
         // Retrieve user info from ThreadLocal
         UserInfo userInfo = AuthContextUtil.getUserInfo();
